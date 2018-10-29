@@ -12,5 +12,6 @@ model.
 and SPGW-U (status of the network)  
 
 This repo is part of a *CORD 4.0* deployment, the service needs to be cloned into the `cord/orchestration/xos-services/` directory before starting XOS.
+After cloning, rename the folder to **nssf**
 
 I plan to include a script to facilitate integration of this service with a CORD deployment.

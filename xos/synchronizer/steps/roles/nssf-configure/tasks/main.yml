@@ -1,0 +1,37 @@
+- name: get service route interface name
+  shell: ip route | grep 10.0.6.0/24 | grep -oP '(?<=dev\s)\w+'
+  register: SERVICE_INTERFACE
+
+- name: set oai component interfaces
+  set_fact:
+    MME_INTERFACE: "{{SERVICE_INTERFACE.stdout}}"
+
+- name: set hosts
+  lineinfile:
+    name: /etc/hosts
+    line: "{{item.line}}"
+    regexp: "{{item.regex}}"
+  with_items:
+    - { regex: "{{NSSF_HOST}}", line: '{{NSSF_PRIVATE_IP}} {{NSSF_HOST}}' }
+    
+- name: place db config files
+  template:
+    src: "{{item.src}}"
+    dest: "{{item.dest}}"
+  with_items:
+    - { src: 'nssf_db.j2', dest: '~/nssf_db.sql'}
+
+- name: drop nssf database
+  mysql_db:
+    login_user: root
+    login_password: linux
+    name: nssf_db
+    state: absent
+
+- name: import nssf sql
+  mysql_db:
+    login_user: root
+    login_password: linux
+    name: nssf_db
+    state: import
+    target: ~/nssf_db.sql

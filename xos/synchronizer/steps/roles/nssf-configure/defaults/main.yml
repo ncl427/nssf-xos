@@ -1,0 +1,28 @@
+NSSF_HOST: nssf
+
+MCC: 208
+MNC: 93
+TAC: 1
+
+SIM:
+  - ID: 2
+    IMSI: '208930100001111'
+  - ID: 3
+    IMSI: '001010123456702'
+  - ID: 4
+    IMSI: '001010123456703'
+
+SLICES:
+  - DIF: 1
+    SERVICE: WEB
+#    SPGWC: '{{SPGWC_PRIVATE_IP_LIST[0]}}'
+  - DIF: 2
+    SERVICE: VIDEO
+#    SPGWC: '{{SPGWC_PRIVATE_IP_LIST[1]}}'
+  - DIF: 3
+    SERVICE: IOT
+#    SPGWC: 0.0.0.0
+
+
+
+

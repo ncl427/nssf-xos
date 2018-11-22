@@ -12,4 +12,7 @@ It follows the standard XOS service implementation for CORD 4.0.
 This repo is part of a *CORD 4.0* deployment, the service needs to be cloned into the `cord/orchestration/xos-services/` directory before starting XOS.
 After cloning, rename the folder to **nssf**
 
-I plan to include a script to facilitate integration of this service with a CORD deployment.
+We plan to include a script to facilitate integration of this service with a CORD deployment.
+
+## Acknowledgment
+This research was supported by the MSIP (Ministry of Science, ICT and Future Planning), Korea, under the ITRC (Information Technology Research Center) support program (IITP-2017 2017-0-01633) supervised by the IITP (Institute for Information & communications Technology Promotion.

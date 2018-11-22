@@ -8,6 +8,7 @@ It follows the standard XOS service implementation for CORD 4.0.
 - Database creation based on a MySQL Script
 - IP configuration for NSSF VNF communication with vMME
 - Definition of synchronizer functions for getting the IPs of Instantiated SPGW-C and SPGW-U (status of the network)  
+
 Description of this section can be found [here](xos/synchronizer/steps)
 
 This repo is part of a *CORD 4.0* deployment, the service needs to be cloned into the `cord/orchestration/xos-services/` directory before starting XOS.
